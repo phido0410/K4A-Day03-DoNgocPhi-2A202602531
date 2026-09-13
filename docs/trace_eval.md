@@ -154,7 +154,7 @@ Dán 1 đoạn trích xuất log tiêu biểu từ file `docs/trace_waterfall.js
 - `404 NOT_FOUND`: model `gemini-2.5-flash` không còn cấp cho người dùng mới → chuyển sang `gemini-3.6-flash` (bỏ `temperature=0.2` theo khuyến nghị của Gemini 3).
 - `429 RESOURCE_EXHAUSTED`: gói miễn phí giới hạn 5 request/phút, lần chạy đầu bị fallback về Mock giữa chừng → bổ sung cơ chế chờ theo `retryDelay` rồi thử lại, không cộng thời gian chờ vào `llm_latency_ms`, và cảnh báo khi trace bị lẫn dữ liệu Mock.
 - `429 GenerateRequestsPerDay` (giới hạn 20 request/ngày của gói miễn phí): khi chạy chế độ so sánh `--compare`, Chatbot Baseline của TC02–TC05 bị chặn. Cơ chế retry nhận diện đúng quota theo ngày nên không chờ vô ích; kết quả so sánh lỗi không được đưa vào báo cáo. Sau khi có quota mới, chạy lại `--compare` thành công cả 5/5 test case.
-- **Kết quả đẩy Repo nộp bài:** [ ] Đã Commit và Push mã nguồn thành công lên GitHub cá nhân.
+- **Kết quả đẩy Repo nộp bài:** [✅] Đã Commit và Push mã nguồn thành công lên GitHub cá nhân.
 
 ---
 
