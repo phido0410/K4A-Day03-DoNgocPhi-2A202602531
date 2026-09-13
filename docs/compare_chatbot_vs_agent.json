@@ -1,0 +1,143 @@
+[
+  {
+    "test_case_id": "TC01",
+    "type": "direct_query",
+    "question": "Quy tắc 50/30/20 trong quản lý chi tiêu cá nhân là gì? Tôi nên áp dụng thế nào?",
+    "chatbot_baseline": {
+      "model": "gemini-3.6-flash",
+      "output": "**Quy tắc 50/30/20** là một phương pháp quản lý tài chính cá nhân đơn giản nhưng rất hiệu quả, được phổ biến bởi Giáo sư Elizabeth Warren (Đại học Harvard). Phương pháp này giúp bạn phân bổ **thu nhập sau thuế (thu nhập ròng)** vào 3 nhóm mục đích rõ ràng để đảm bảo vừa trang trải được cuộc sống, vừa có niềm vui cá nhân, lại vừa xây dựng được tương lai tài chính an toàn.\n\nCụ thể, quy tắc này chia ngân sách của bạn thành:\n\n---\n\n### 1. 50% Thu nhập: Nhu cầu thiết yếu (Needs)\nĐây là những khoản chi bắt buộc bạn **phải trả** để duy trì cuộc sống hàng ngày. Nếu không chi trả cho những thứ này, cuộc sống của bạn sẽ bị ảnh hưởng nghiêm trọng.\n\n*   **Bao gồm:** \n    *   Tiền thuê nhà / tiền trả góp ngân hàng mua nhà.\n    *   Tiền ăn uống cơ bản (đi chợ, siêu thị).\n    *   Hóa đơn điện, nước, internet, rác, gas.\n    *   Chi phí đi lại (xăng xe, bảo dưỡng, vé xe bus/máy bay cố định).\n    *   Chi phí y tế, bảo hiểm nhân thọ/y tế cơ bản.\n    *   Khoản trả nợ tối thiểu (nếu có).\n\n### 2. 30% Thu nhập: Sở thích cá nhân (Wants)\nĐây là những khoản chi phục vụ nhu cầu giải trí, nâng cao chất lượng cuộc sống. Bạn **muốn** có chúng, nhưng nếu cắt giảm thì bạn vẫn có thể sống tốt.\n\n*   **Bao gồm:**\n    *   Đi ăn tiệm, cà phê với bạn bè, gọi đồ ăn ngoài.\n    *   Mua sắm quần áo thời trang, mỹ phẩm không quá thiết yếu.\n    *   Giải trí: Xem phim, xem ca nhạc, đăng ký dịch vụ (Netflix, Spotify, Gym).\n    *   Đi du lịch, nghỉ dưỡng.\n    *   Mua sắm thiết bị công nghệ mới (khi máy cũ vẫn dùng tốt).\n\n### 3. 20% Thu nhập: Tiết kiệm & Mục tiêu tài chính (Savings & Investments)\nĐây là phần tiền giúp bạn bảo vệ bản thân trước rủi ro và xây dựng sự tự do tài chính trong tương lai.\n\n*   **Bao gồm:**\n    *   **Quỹ khẩn cấp:** (Nên có từ 3 - 6 tháng chi phí sinh hoạt).\n    *   **Tiết kiệm ngắn/dài hạn:** Mua xe, mua nhà, cưới hỏi, sinh con.\n    *   **Đầu tư:** Gửi tiết kiệm ngân hàng, mua chứng khoán, chứng chỉ quỹ, vàng...\n    *   **Trả nợ nhanh:** Trả thêm tiền nợ gốc để nhanh chóng hết nợ.\n\n---\n\n### Cách bạn có thể áp dụng từng bước:\n\n1. **Xác định Tổng thu nhập ròng:** Tính chính xác số tiền bạn thực nhận về tài khoản mỗi tháng (sau khi đã trừ thuế, BHXH...).\n2. **Tính toán số tiền cho từng nhóm:**\n   * *Ví dụ: Thu nhập của bạn là 15.000.000 VNĐ/tháng:*\n     * **50% Thiết yếu** = 7.500.000 VNĐ\n     * **30% Sở thích** = 4.500.000 VNĐ\n     * **20% Tiết kiệm** = 3.000.000 VNĐ\n3. **Áp dụng nguyên tắc \"Trả cho bản thân trước\":** Ngay khi nhận lương, hãy chuyển ngay **20% (3.000.000 VNĐ)** vào tài khoản tiết kiệm/đầu tư riêng biệt. Đừng chờ đến cuối tháng thừa bao nhiêu mới tiết kiệm.\n4. **Theo dõi và điều chỉnh chi tiêu:** Theo dõi các khoản chi trong tháng để đảm bảo tiền nhà, tiền ăn không vượt quá 50% và tiền vui chơi không vượt quá 30%.\n\n---\n\n💡 **Lời khuyên nhỏ:** \nTỷ lệ 50/30/20 không phải là một công thức cứng nhắc. \n* Nếu bạn đang sống ở các thành phố lớn (như Hà Nội, TP.HCM) và chi phí thuê nhà cao, nhóm **Thiết yếu** có thể chiếm 60%. Khi đó, bạn có thể chủ động hạ nhóm **Sở thích** xuống 20% để giữ nguyên 20% Tiết kiệm.\n* Thu nhập càng tăng, bạn nên tìm cách nâng tỷ lệ **Tiết kiệm & Đầu tư** lên cao hơn (ví dụ: 50/20/30).",
+      "latency_ms": 15936.92
+    },
+    "react_agent": {
+      "model": "gemini-3.6-flash",
+      "tool_calls": [],
+      "final_answer": "**Quy tắc 50/30/20** là một phương pháp quản lý tài chính cá nhân đơn giản và hiệu quả, giúp bạn phân bổ thu nhập hàng tháng (sau thuế) vào 3 nhóm chính:\n\n---\n\n### 1. **50% - Nhu cầu thiết yếu (Needs)**\nĐây là các khoản chi phí bắt buộc phải có để duy trì cuộc sống hằng ngày. Nếu không chi trả cho các khoản này, cuộc sống của bạn sẽ bị ảnh hưởng trực tiếp.\n* **Bao gồm:** Tiền thuê nhà/trả góp nhà, tiền điện nước, internet, chi phí ăn uống cơ bản, chi phí di chuyển (xăng xe/vé xe), hóa đơn bảo hiểm, thuốc men.\n\n---\n\n### 2. **30% - Sở thích cá nhân (Wants)**\nĐây là các khoản chi cho những điều bạn mong muốn nhưng không bắt buộc phải có. Nhóm này giúp bạn tận hưởng cuộc sống nhưng cần được kiểm soát để tránh lãng phí.\n* **Bao gồm:** Mua sắm quần áo/đồ công nghệ, đi ăn tiệm, cafe, giải trí (xem phim, đăng ký dịch vụ xem phim/nghe nhạc), du lịch, sở thích cá nhân.\n\n---\n\n### 3. **20% - Mục tiêu tài chính (Savings & Investments)**\nĐây là phần tiền dành cho tương lai, giúp bạn xây dựng sự an toàn tài chính và đạt được các mục tiêu dài hạn.\n* **Bao gồm:** Quỹ dự phòng khẩn cấp (từ 3 - 6 tháng chi tiêu), tiền tiết kiệm, đầu tư (chứng khoán, tích lũy), trả các khoản nợ (nếu có).\n\n---\n\n### 💡 **Cách bạn nên áp dụng quy tắc này:**\n\n1. **Xác định tổng thu nhập ròng hàng tháng:** Tính tổng số tiền thực nhận sau khi đã trừ các khoản thuế và bảo hiểm.\n2. **Tính toán ngân sách cho từng nhóm:**\n   * *Ví dụ:* Nếu thu nhập của bạn là **10.000.000đ/tháng**:\n     * **5.000.000đ** dành cho Nhu cầu thiết yếu (50%)\n     * **3.000.000đ** dành cho Sở thích cá nhân (30%)\n     * **2.000.000đ** dành cho Tiết kiệm & Đầu tư (20%)\n3. **Theo dõi chi tiêu thực tế:** Sử dụng sổ tay hoặc ứng dụng quản lý chi tiêu để ghi chép lại các khoản chi trong tháng.\n4. **Điều chỉnh linh hoạt:** Tỷ lệ 50/30/20 là mốc tham khảo. Tùy thuộc vào hoàn cảnh thực tế (ví dụ: nếu tiền thuê nhà cao), bạn có thể điều chỉnh thành **60/20/20** hoặc tăng phần tiết kiệm lên **40/30/30** nếu muốn hoàn thành mục tiêu tài chính sớm hơn.",
+      "steps": 1,
+      "latency_ms": 11323.79,
+      "source": "docs/trace_waterfall.json"
+    }
+  },
+  {
+    "test_case_id": "TC02",
+    "type": "single_tool_query",
+    "question": "Tháng 09/2026 tài khoản U001 đã chi tiêu bao nhiêu và mỗi danh mục còn lại bao nhiêu ngân sách?",
+    "chatbot_baseline": {
+      "model": "gemini-3.6-flash",
+      "output": "Xin chào! Tôi là Trợ lý Quản lý Chi tiêu Cá nhân. \n\nRất tiếc, tôi **không có quyền truy cập vào dữ liệu thời gian thực** hoặc hệ thống lưu trữ sổ chi tiêu cá nhân của bạn, nên tôi không thể tra cứu số tiền đã chi tiêu và ngân sách còn lại của tài khoản **U001** trong tháng 09/2026.\n\nTuy nhiên, nếu bạn đang quản lý ngân sách và cần hỗ trợ, tôi có thể giúp bạn:\n1. **Tư vấn cách phân bổ ngân sách** (như quy tắc 50/30/20, phương pháp 6 chiếc hũ).\n2. **Hướng dẫn cách tự lập file theo dõi chi tiêu** trên Excel/Google Sheets.\n3. **Đưa ra các lời khuyên tiết kiệm** và tối ưu hóa chi tiêu theo từng danh mục.\n\nNếu bạn cần tư vấn về các nguyên tắc quản lý tài chính, hãy cho tôi biết nhé!",
+      "latency_ms": 7156.66
+    },
+    "react_agent": {
+      "model": "gemini-3.6-flash",
+      "tool_calls": [
+        {
+          "tool_name": "get_spending_summary",
+          "arguments": {
+            "month": "09/2026",
+            "user_id": "U001"
+          },
+          "status": "SUCCESS"
+        }
+      ],
+      "final_answer": "Trong tháng **09/2026**, tình hình chi tiêu của tài khoản **U001 (Nguyễn Minh Anh)** như sau:\n\n- **Tổng ngân sách:** 10.500.000đ\n- **Tổng số tiền đã chi:** 8.230.000đ\n- **Tổng số tiền còn lại:** 2.270.000đ\n\n---\n\n### Chi tiết ngân sách theo từng danh mục:\n\n1. **Ăn uống**\n   - **Ngân sách:** 4.000.000đ\n   - **Đã chi:** 3.550.000đ\n   - **Còn lại:** 450.000đ\n\n2. **Di chuyển**\n   - **Ngân sách:** 1.000.000đ\n   - **Đã chi:** 450.000đ\n   - **Còn lại:** 550.000đ\n\n3. **Mua sắm**\n   - **Ngân sách:** 2.000.000đ\n   - **Đã chi:** 1.200.000đ\n   - **Còn lại:** 800.000đ\n\n4. **Giải trí**\n   - **Ngân sách:** 1.000.000đ\n   - **Đã chi:** 880.000đ\n   - **Còn lại:** 120.000đ\n\n5. **Hóa đơn**\n   - **Ngân sách:** 2.500.000đ\n   - **Đã chi:** 2.150.000đ\n   - **Còn lại:** 350.000đ",
+      "steps": 2,
+      "latency_ms": 11690.97,
+      "source": "docs/trace_waterfall.json"
+    }
+  },
+  {
+    "test_case_id": "TC03",
+    "type": "expense_recording",
+    "question": "Ghi giúp tôi khoản chi 45.000đ tiền grab đi làm ngày 13/09/2026 vào danh mục Di chuyển, mã người dùng của tôi là U001.",
+    "chatbot_baseline": {
+      "model": "gemini-3.6-flash",
+      "output": "Chào bạn, tôi là Trợ lý Quản lý Chi tiêu Cá nhân. \n\nRất tiếc, tôi không có công cụ kết nối với sổ chi tiêu cá nhân hay quyền truy cập vào dữ liệu thời gian thực của bạn (mã U001) để tự động ghi nhận khoản chi này. \n\nĐể lưu lại khoản chi 45.000đ cho chuyến Grab này, bạn vui lòng nhập trực tiếp vào ứng dụng quản lý tài chính cá nhân mà bạn đang sử dụng, file Excel hoặc sổ ghi chép cá nhân nhé.\n\nNếu bạn cần tư vấn về cách lập ngân sách, phân bổ chi phí cho danh mục \"Di chuyển\" hay các mẹo tiết kiệm tài chính khác, tôi rất sẵn lòng hỗ trợ!",
+      "latency_ms": 6985.83
+    },
+    "react_agent": {
+      "model": "gemini-3.6-flash",
+      "tool_calls": [
+        {
+          "tool_name": "add_expense",
+          "arguments": {
+            "amount": 45000,
+            "user_id": "U001",
+            "category": "Di chuyển",
+            "date": "13/09/2026",
+            "note": "Tiền grab đi làm"
+          },
+          "status": "SUCCESS"
+        }
+      ],
+      "final_answer": "Đã ghi thành công khoản chi tiêu của bạn:\n\n- **Mã người dùng:** U001\n- **Số tiền:** 45.000đ\n- **Danh mục:** Di chuyển\n- **Ngày chi:** 13/09/2026\n- **Ghi chú:** Tiền grab đi làm\n\n**Tình hình ngân sách danh mục Di chuyển (Tháng 09/2026):**\n- **Ngân sách:** 1.000.000đ\n- **Đã chi:** 495.000đ\n- **Còn lại:** 505.000đ",
+      "steps": 2,
+      "latency_ms": 8471.18,
+      "source": "docs/trace_waterfall.json"
+    }
+  },
+  {
+    "test_case_id": "TC04",
+    "type": "multi_step_reasoning",
+    "question": "Tôi là U001. Kiểm tra giúp tôi ngân sách Ăn uống tháng 09/2026 còn lại bao nhiêu, nếu vẫn còn đủ thì ghi khoản chi 350.000đ ăn tối với gia đình ngày 13/09/2026.",
+    "chatbot_baseline": {
+      "model": "gemini-3.6-flash",
+      "output": "Chào bạn (U001),\n\nRất tiếc, tôi là Trợ lý Quản lý Chi tiêu Cá nhân nhưng **không có quyền truy cập vào dữ liệu tài chính thời gian thực cũng như không có công cụ ghi chép dữ liệu cá nhân của bạn**. Vì vậy, tôi không thể:\n1. Kiểm tra số dư ngân sách \"Ăn uống\" tháng 09/2026 của bạn.\n2. Tự động ghi nhận khoản chi 350.000đ cho bữa ăn tối ngày 13/09/2026.\n\nBạn vui lòng mở ứng dụng quản lý chi tiêu hoặc sổ ghi chép cá nhân của mình để kiểm tra và cập nhật thủ công khoản chi này nhé!\n\nNếu bạn cần tư vấn thêm về các phương pháp lập ngân sách, quy tắc quản lý chi tiêu (như quy tắc 50/30/20) hoặc mẹo tiết kiệm tiền ăn uống, tôi luôn sẵn sàng hỗ trợ bạn!",
+      "latency_ms": 6960.73
+    },
+    "react_agent": {
+      "model": "gemini-3.6-flash",
+      "tool_calls": [
+        {
+          "tool_name": "get_spending_summary",
+          "arguments": {
+            "month": "09/2026",
+            "user_id": "U001",
+            "category": "Ăn uống"
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "tool_name": "add_expense",
+          "arguments": {
+            "amount": 350000,
+            "date": "13/09/2026",
+            "user_id": "U001",
+            "note": "Ăn tối với gia đình",
+            "category": "Ăn uống"
+          },
+          "status": "SUCCESS"
+        }
+      ],
+      "final_answer": "Ngân sách danh mục **Ăn uống** tháng 09/2026 của bạn trước khi ghi nhận khoản chi mới:\n- **Ngân sách:** 4.000.000đ\n- **Đã chi:** 3.550.000đ\n- **Còn lại:** 450.000đ\n\nVì ngân sách còn đủ (450.000đ ≥ 350.000đ), tôi đã ghi nhận khoản chi cho bạn:\n- **Số tiền:** 350.000đ\n- **Danh mục:** Ăn uống\n- **Ngày chi:** 13/09/2026\n- **Ghi chú:** Ăn tối với gia đình\n\n📌 **Hiện tại, ngân sách Ăn uống tháng 09/2026 còn lại:** **100.000đ**.",
+      "steps": 3,
+      "latency_ms": 16676.26,
+      "source": "docs/trace_waterfall.json"
+    }
+  },
+  {
+    "test_case_id": "TC05",
+    "type": "edge_case_handling",
+    "question": "Cho tôi xem tình hình chi tiêu tháng 09/2026 của tài khoản U999.",
+    "chatbot_baseline": {
+      "model": "gemini-3.6-flash",
+      "output": "Xin lỗi bạn, tôi không có quyền truy cập vào dữ liệu chi tiêu cá nhân thời gian thực hoặc thông tin chi tiết của các tài khoản (như tài khoản U999). \n\nTuy nhiên, nếu bạn cần trợ giúp, tôi có thể hướng dẫn bạn:\n- Cách phân tích và đánh giá tình hình chi tiêu hàng tháng theo các quy tắc tài chính (như **quy tắc 50/30/20** hoặc **quy tắc 6 hũ**).\n- Gợi ý các công cụ/phương pháp theo dõi chi tiêu hiệu quả (sử dụng ứng dụng, file Excel, nhật ký thu chi).\n- Cách lập kế hoạch cắt giảm chi tiêu cho các tháng tiếp theo.\n\nBạn có muốn tôi tư vấn thêm về chủ đề nào trong số này không?",
+      "latency_ms": 7735.65
+    },
+    "react_agent": {
+      "model": "gemini-3.6-flash",
+      "tool_calls": [
+        {
+          "tool_name": "get_spending_summary",
+          "arguments": {
+            "month": "09/2026",
+            "user_id": "U999"
+          },
+          "status": "NOT_FOUND"
+        }
+      ],
+      "final_answer": "Rất tiếc, tôi không tìm thấy thông tin của người dùng có mã **U999** trong hệ thống. Bạn vui lòng kiểm tra lại mã người dùng và thử lại nhé!",
+      "steps": 2,
+      "latency_ms": 8218.59,
+      "source": "docs/trace_waterfall.json"
+    }
+  }
+]
