@@ -132,6 +132,22 @@ Dán 1 đoạn trích xuất log tiêu biểu từ file `docs/trace_waterfall.js
 - **Về hallucination:** Chatbot không bịa số liệu, nhưng đó là nhờ System Prompt yêu cầu từ chối. Bài lab chưa thử Chatbot không có chỉ dẫn này, nên chưa kết luận được về nguy cơ bịa đặt của Chatbot thuần.
 - **Đánh đổi:** Agent chậm hơn ở các test case có Tool vì phải gọi LLM nhiều vòng; TC04 chậm gấp khoảng 2,4 lần (16,7s so với 7,0s).
 
+**Độ ổn định qua 2 lần chạy độc lập** (`docs/trace_waterfall.json` là lần 1, `docs/trace_waterfall_run2.json` là lần 2)
+> Cùng model `gemini-3.6-flash`, cùng 5 test case; dữ liệu sổ chi tiêu giả lập được khởi tạo lại ở mỗi lần chạy. Thời gian chờ do rate limit đã được trừ khỏi độ trễ.
+
+| TC | Chuỗi Action + arguments | Số bước | Số liệu then chốt trong Final Answer lần 2 | Độ trễ lần 1 → lần 2 (ms) |
+| :---: | :--- | :---: | :--- | ---: |
+| TC01 | Giống hệt (không gọi Tool) | 1 → 1 | – | 11324 → 9074 |
+| TC02 | Giống hệt | 2 → 2 | 8.230.000đ, 2.270.000đ, 450.000đ, 120.000đ ✅ | 11691 → 11958 |
+| TC03 | Giống hệt | 2 → 2 | 505.000đ ✅ | 8471 → 10448 |
+| TC04 | Giống hệt | 3 → 3 | 450.000đ, 100.000đ ✅ | 16676 → 21048 |
+| TC05 | Giống hệt | 2 → 2 | U999 không tồn tại ✅ | 8219 → 8513 |
+
+**Nhận xét độ ổn định:**
+- **Hành vi gọi Tool ổn định 5/5:** cùng Tool, cùng tham số, cùng số bước ở cả hai lần; số liệu trong Final Answer đều khớp Observation.
+- **Phần thay đổi giữa hai lần** là cách diễn đạt Final Answer (ví dụ lần 2 của TC04 có thêm mã giao dịch `TX-U001-0008`) và độ trễ (TC04 dao động từ 16,7s đến 21,0s).
+- **Giới hạn:** 2 lần chạy là mẫu rất nhỏ, chỉ cho thấy không có sai lệch trong mẫu này, chưa đủ để kết luận thống kê về độ ổn định của Agent.
+
 ---
 
 ## 3. TỔNG KẾT KẾT QUẢ NGHIỆM THU & NỘP BÀI
@@ -139,6 +155,8 @@ Dán 1 đoạn trích xuất log tiêu biểu từ file `docs/trace_waterfall.js
 - [x] Đã điền API Key thật trong `.env` và xác nhận Agent chạy mượt mà trên LLM API thật (Gemini/OpenAI). *(Toàn bộ 10 sự kiện trong trace đều có `"model": "gemini-3.6-flash"`, không có bước nào fallback về Mock.)*
 - **Tổng số Test Cases đã chạy thành công:** 5 / 5 test cases.
 - **Số lượt gọi Tool qua MCP Server chính xác:** 5 lượt *(TC02: 1, TC03: 1, TC04: 2, TC05: 1; TC01 đúng kỳ vọng không gọi Tool)*.
+- **Chạy lặp lại lần 2 để kiểm tra độ ổn định:** 5 / 5 test case cho cùng chuỗi Tool và tham số như lần 1 *(chi tiết ở mục 2)*.
+- **Kết quả đẩy Repo nộp bài:** [✅] Đã Commit và Push mã nguồn thành công lên GitHub cá nhân.
 
 **Đối chiếu kết quả thực tế với kỳ vọng từng Test Case:**
 
@@ -154,7 +172,6 @@ Dán 1 đoạn trích xuất log tiêu biểu từ file `docs/trace_waterfall.js
 - `404 NOT_FOUND`: model `gemini-2.5-flash` không còn cấp cho người dùng mới → chuyển sang `gemini-3.6-flash` (bỏ `temperature=0.2` theo khuyến nghị của Gemini 3).
 - `429 RESOURCE_EXHAUSTED`: gói miễn phí giới hạn 5 request/phút, lần chạy đầu bị fallback về Mock giữa chừng → bổ sung cơ chế chờ theo `retryDelay` rồi thử lại, không cộng thời gian chờ vào `llm_latency_ms`, và cảnh báo khi trace bị lẫn dữ liệu Mock.
 - `429 GenerateRequestsPerDay` (giới hạn 20 request/ngày của gói miễn phí): khi chạy chế độ so sánh `--compare`, Chatbot Baseline của TC02–TC05 bị chặn. Cơ chế retry nhận diện đúng quota theo ngày nên không chờ vô ích; kết quả so sánh lỗi không được đưa vào báo cáo. Sau khi có quota mới, chạy lại `--compare` thành công cả 5/5 test case.
-- **Kết quả đẩy Repo nộp bài:** [✅] Đã Commit và Push mã nguồn thành công lên GitHub cá nhân.
 
 ---
 
