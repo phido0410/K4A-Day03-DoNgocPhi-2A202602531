@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC01",
+    "type": "direct_query",
+    "question": "Quy tắc 50/30/20 trong quản lý chi tiêu cá nhân là gì? Tôi nên áp dụng thế nào?",
+    "expected_behavior": "Agent trả lời trực tiếp bằng kiến thức chung về tài chính cá nhân, không gọi bất kỳ Tool nào.",
+    "complexity": "Low"
+  },
+  {
+    "id": "TC02",
+    "type": "single_tool_query",
+    "question": "Tháng 09/2026 tài khoản U001 đã chi tiêu bao nhiêu và mỗi danh mục còn lại bao nhiêu ngân sách?",
+    "expected_behavior": "Agent gọi 'get_spending_summary' (user_id='U001', month='09/2026') và tổng hợp số đã chi / còn lại theo từng danh mục đúng với số liệu Observation.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC03",
+    "type": "expense_recording",
+    "question": "Ghi giúp tôi khoản chi 45.000đ tiền grab đi làm ngày 13/09/2026 vào danh mục Di chuyển, mã người dùng của tôi là U001.",
+    "expected_behavior": "Agent gọi 'add_expense' với amount=45000 (số nguyên), category='Di chuyển', date='13/09/2026' và báo lại ngân sách Di chuyển còn lại.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC04",
+    "type": "multi_step_reasoning",
+    "question": "Tôi là U001. Kiểm tra giúp tôi ngân sách Ăn uống tháng 09/2026 còn lại bao nhiêu, nếu vẫn còn đủ thì ghi khoản chi 350.000đ ăn tối với gia đình ngày 13/09/2026.",
+    "expected_behavior": "Agent thực hiện chuỗi suy luận ReAct: Step 1 gọi 'get_spending_summary' thấy Ăn uống còn 450.000đ; Step 2 so sánh 350.000đ <= 450.000đ nên gọi 'add_expense'; Step 3 báo đã ghi và ngân sách Ăn uống còn 100.000đ.",
+    "complexity": "High"
+  },
+  {
+    "id": "TC05",
+    "type": "edge_case_handling",
+    "question": "Cho tôi xem tình hình chi tiêu tháng 09/2026 của tài khoản U999.",
+    "expected_behavior": "Agent nhận kết quả NOT_FOUND từ Tool, thông báo lịch sự không tìm thấy tài khoản, không bịa đặt số liệu và không gọi thêm Tool nào khác.",
+    "complexity": "Medium"
+  }
+]
